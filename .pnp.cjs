@@ -31,6 +31,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:20.6.0"],\
             ["@types/react", "npm:18.2.21"],\
             ["@types/react-dom", "npm:18.2.7"],\
+            ["@xstate/react", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:3.2.2"],\
             ["autoprefixer", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:10.4.15"],\
             ["eslint", "npm:8.49.0"],\
             ["eslint-config-next", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:13.4.19"],\
@@ -3029,6 +3030,38 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@xstate/react", [\
+        ["npm:3.2.2", {\
+          "packageLocation": "./.yarn/cache/@xstate-react-npm-3.2.2-44d751f4b0-b5dbc10bf8.zip/node_modules/@xstate/react/",\
+          "packageDependencies": [\
+            ["@xstate/react", "npm:3.2.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:3.2.2", {\
+          "packageLocation": "./.yarn/__virtual__/@xstate-react-virtual-220626e706/0/cache/@xstate-react-npm-3.2.2-44d751f4b0-b5dbc10bf8.zip/node_modules/@xstate/react/",\
+          "packageDependencies": [\
+            ["@xstate/react", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:3.2.2"],\
+            ["@types/react", "npm:18.2.21"],\
+            ["@types/xstate", null],\
+            ["@types/xstate__fsm", null],\
+            ["@xstate/fsm", null],\
+            ["react", "npm:18.2.0"],\
+            ["use-isomorphic-layout-effect", "virtual:220626e706f36655c7bab5d3ed9ff5177c52199cd685d36a22fe71418fc562c3bf792df81a1b484b07d320813d436eb89031639df897540dd5924e6464dfddc0#npm:1.1.2"],\
+            ["use-sync-external-store", "virtual:220626e706f36655c7bab5d3ed9ff5177c52199cd685d36a22fe71418fc562c3bf792df81a1b484b07d320813d436eb89031639df897540dd5924e6464dfddc0#npm:1.2.0"],\
+            ["xstate", "npm:4.38.2"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "@types/xstate",\
+            "@types/xstate__fsm",\
+            "@xstate/fsm",\
+            "react",\
+            "xstate"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["abbrev", [\
         ["npm:1.1.1", {\
           "packageLocation": "./.yarn/cache/abbrev-npm-1.1.1-3659247eab-a4a97ec07d.zip/node_modules/abbrev/",\
@@ -5260,6 +5293,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:20.6.0"],\
             ["@types/react", "npm:18.2.21"],\
             ["@types/react-dom", "npm:18.2.7"],\
+            ["@xstate/react", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:3.2.2"],\
             ["autoprefixer", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:10.4.15"],\
             ["eslint", "npm:8.49.0"],\
             ["eslint-config-next", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:13.4.19"],\
@@ -8442,6 +8476,50 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["uri-js", "npm:4.4.1"],\
             ["punycode", "npm:2.3.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["use-isomorphic-layout-effect", [\
+        ["npm:1.1.2", {\
+          "packageLocation": "./.yarn/cache/use-isomorphic-layout-effect-npm-1.1.2-65facd0a4b-a6532f7fc9.zip/node_modules/use-isomorphic-layout-effect/",\
+          "packageDependencies": [\
+            ["use-isomorphic-layout-effect", "npm:1.1.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:220626e706f36655c7bab5d3ed9ff5177c52199cd685d36a22fe71418fc562c3bf792df81a1b484b07d320813d436eb89031639df897540dd5924e6464dfddc0#npm:1.1.2", {\
+          "packageLocation": "./.yarn/__virtual__/use-isomorphic-layout-effect-virtual-883205c02b/0/cache/use-isomorphic-layout-effect-npm-1.1.2-65facd0a4b-a6532f7fc9.zip/node_modules/use-isomorphic-layout-effect/",\
+          "packageDependencies": [\
+            ["use-isomorphic-layout-effect", "virtual:220626e706f36655c7bab5d3ed9ff5177c52199cd685d36a22fe71418fc562c3bf792df81a1b484b07d320813d436eb89031639df897540dd5924e6464dfddc0#npm:1.1.2"],\
+            ["@types/react", "npm:18.2.21"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["use-sync-external-store", [\
+        ["npm:1.2.0", {\
+          "packageLocation": "./.yarn/cache/use-sync-external-store-npm-1.2.0-44f75d2564-5c639e0f8d.zip/node_modules/use-sync-external-store/",\
+          "packageDependencies": [\
+            ["use-sync-external-store", "npm:1.2.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:220626e706f36655c7bab5d3ed9ff5177c52199cd685d36a22fe71418fc562c3bf792df81a1b484b07d320813d436eb89031639df897540dd5924e6464dfddc0#npm:1.2.0", {\
+          "packageLocation": "./.yarn/__virtual__/use-sync-external-store-virtual-2bb7ceff9e/0/cache/use-sync-external-store-npm-1.2.0-44f75d2564-5c639e0f8d.zip/node_modules/use-sync-external-store/",\
+          "packageDependencies": [\
+            ["use-sync-external-store", "virtual:220626e706f36655c7bab5d3ed9ff5177c52199cd685d36a22fe71418fc562c3bf792df81a1b484b07d320813d436eb89031639df897540dd5924e6464dfddc0#npm:1.2.0"],\
+            ["@types/react", "npm:18.2.21"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
