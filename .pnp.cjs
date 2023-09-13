@@ -40,7 +40,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:18.2.0"],\
             ["tailwindcss", "npm:3.3.3"],\
-            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
+            ["xstate", "npm:4.38.2"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -5268,7 +5269,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:18.2.0"],\
             ["tailwindcss", "npm:3.3.3"],\
-            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
+            ["xstate", "npm:4.38.2"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -8840,6 +8842,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/wrappy-npm-1.0.2-916de4d4b3-159da4805f.zip/node_modules/wrappy/",\
           "packageDependencies": [\
             ["wrappy", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["xstate", [\
+        ["npm:4.38.2", {\
+          "packageLocation": "./.yarn/cache/xstate-npm-4.38.2-689f0bc76a-04cc8a5ab4.zip/node_modules/xstate/",\
+          "packageDependencies": [\
+            ["xstate", "npm:4.38.2"]\
           ],\
           "linkType": "HARD"\
         }]\
