@@ -1,4 +1,4 @@
-import mockItems, { ItemType } from "@/domain/item";
+import mockItems, { ItemType } from "@/domain/Item";
 import ItemUI from "@/ui/components/ItemDetail";
 
 export default function ItemPage({

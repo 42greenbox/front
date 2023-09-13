@@ -1,4 +1,4 @@
-import mockItems from "@/domain/item";
+import mockItems from "@/domain/Item";
 import Item from "@/ui/components/Item";
 import Link from "next/link";
 
