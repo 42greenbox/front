@@ -1,5 +1,11 @@
+import initMocks from "@/mockserver";
 import Button from "@/ui/components/Button";
 import Link from "next/link";
+
+if (process.env.NODE_ENV === "development") {
+  console.log("test");
+  initMocks();
+}
 
 export default function Home() {
   return (
