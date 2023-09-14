@@ -1,3 +1,9 @@
+import StateMachineProvider from "./machine-provider";
+
+if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
+  require("@/mockserver");
+}
+
 export const metadata = {
   title: "GreenBox",
   description: "Green Box Demo",
@@ -11,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <StateMachineProvider>{children}</StateMachineProvider>
+      </body>
     </html>
   );
 }
