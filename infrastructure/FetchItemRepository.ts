@@ -1,10 +1,11 @@
 import { IItemRepository } from "@/domain/IItemRepository";
 import { ItemDto, ItemSendType, ItemType } from "@/domain/Item";
 import { UserType } from "@/domain/User";
+import fetchInstance from "@/lib/FetchInstance";
 
 export default class FetchItemRepository implements IItemRepository {
   public getItems = async () => {
-    const res = await fetch("https://server.42greenbox.com/storage");
+    const res = await fetchInstance("https://server.42greenbox.com/storage");
     const rawItems: ItemDto[] = await res.json();
     const items: ItemType[] = rawItems.map((dto) => {
       return {
@@ -26,7 +27,7 @@ export default class FetchItemRepository implements IItemRepository {
     return items;
   };
   public getMyItems = async () => {
-    const res = await fetch("https://server.42greenbox.com/storage/me");
+    const res = await fetchInstance("https://server.42greenbox.com/storage/me");
     const rawItems: ItemDto[] = await res.json();
     const items: ItemType[] = rawItems.map((dto) => {
       return {
@@ -49,7 +50,7 @@ export default class FetchItemRepository implements IItemRepository {
   };
 
   public getItem = async (item: ItemType) => {
-    const res = await fetch(
+    const res = await fetchInstance(
       `/storage?user_id=${item.owner}&item_id=${item.id}`
     );
     const rawItem: ItemDto = await res.json();
