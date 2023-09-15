@@ -1,10 +1,7 @@
 "use client";
-import { useInterpret } from "@xstate/react";
-import { createContext } from "react";
-import { InterpreterFrom } from "xstate";
-import { itemsMachine } from "../application/itemsMachine";
+import { useMachine } from "@xstate/react";
 
-interface ActorContextType {
+/*interface ActorContextType {
   itemActor: InterpreterFrom<typeof itemsMachine>;
 }
 
@@ -25,4 +22,9 @@ const StateMachineProvider = ({ children }: Props) => {
   );
 };
 
-export default StateMachineProvider;
+export default StateMachineProvider;*/
+
+export function useAppMachine(machine: any, state: string) {
+  console.log("state", state);
+  return useMachine(machine);
+}

@@ -1,17 +1,13 @@
-import { ActorContext } from "@/app/machine-provider";
+import { getItems } from "@/app/home/page";
 import { ItemType } from "@/domain/Item";
 import ItemUI from "@/ui/components/ItemDetail";
-import { useActor } from "@xstate/react";
-import { useContext } from "react";
 
-export default function ItemModal({
+export default async function ItemModal({
   params: { id: itemId },
 }: {
   params: { id: string };
 }) {
-  const { itemActor } = useContext(ActorContext);
-  const [state, send] = useActor(itemActor);
-  const { items } = state.context;
+  const items = await getItems();
   const item: ItemType = items.find((item) => item.id === itemId)!;
 
   return <ItemUI {...item} />;

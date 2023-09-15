@@ -1,13 +1,18 @@
+import { ItemType } from "@/domain/Item";
 import Item from "@/ui/components/Item";
-import { useActor } from "@xstate/react";
 import Link from "next/link";
-import { useContext } from "react";
-import { ActorContext } from "../machine-provider";
 
-export default function Home() {
-  const { itemActor } = useContext(ActorContext);
-  const [state, send] = useActor(itemActor);
-  const { items } = state.context;
+export default async function Home() {
+  //const { itemActor } = useContext(ActorContext);
+  //const [state, send] = useActor(itemActor);
+  //const { items } = state.context;
+  //const [itemState] = useAppMachine(itemsMachine, "showing");
+  //const service = itemState.children.itemsMachine;
+  //const [state, send] = useActor(
+  //  service as InterpreterFrom<typeof itemsMachine>
+  //);
+  //const items = state.context.items;
+  const items = await getItems();
   return (
     <>
       <h1>home</h1>
@@ -20,4 +25,17 @@ export default function Home() {
       </>
     </>
   );
+}
+
+export async function getItems() {
+  // ...
+  const res = await fetch("https://server.42greenbox.com/storage");
+  const items: ItemType[] = await res.json();
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return items;
 }

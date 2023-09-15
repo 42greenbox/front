@@ -1,4 +1,4 @@
-import StateMachineProvider from "./machine-provider";
+//import StateMachineProvider from "./machine-provider";
 
 if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
   require("@/mockserver");
@@ -17,9 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <StateMachineProvider>{children}</StateMachineProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
