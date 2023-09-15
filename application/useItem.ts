@@ -2,16 +2,12 @@ import { ItemSendType, ItemType } from "@/domain/Item";
 import { UserType } from "../domain/User";
 import DI from "../lib/DI";
 
-export const useItem = () => {
+export const itemService = () => {
   const itemRepository = DI.getItemRepository();
 
   const getItems = async () => {
-    try {
-      const data = await itemRepository.getItems();
-      return data;
-    } catch (error) {
-      console.error(error);
-    }
+    const data = await itemRepository.getItems();
+    return data;
   };
 
   const getMyItems = async () => {

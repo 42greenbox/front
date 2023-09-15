@@ -1,4 +1,4 @@
-import { ItemType } from "@/domain/Item";
+import { itemService } from "@/application/useItem";
 import Item from "@/ui/components/Item";
 import Link from "next/link";
 
@@ -12,6 +12,7 @@ export default async function Home() {
   //  service as InterpreterFrom<typeof itemsMachine>
   //);
   //const items = state.context.items;
+  const { getItems } = itemService();
   const items = await getItems();
   return (
     <>
@@ -25,17 +26,4 @@ export default async function Home() {
       </>
     </>
   );
-}
-
-export async function getItems() {
-  // ...
-  const res = await fetch("https://server.42greenbox.com/storage");
-  const items: ItemType[] = await res.json();
-
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
-
-  return items;
 }

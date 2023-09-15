@@ -1,14 +1,14 @@
-import { getItems } from "@/app/home/page";
+import { itemService } from "@/application/useItem";
 import { ItemType } from "@/domain/Item";
 import ItemUI from "@/ui/components/ItemDetail";
 
 export default async function ItemModal({
-  params: { id: itemId },
+  params: { id: id },
 }: {
   params: { id: string };
 }) {
+  const { getItems } = itemService();
   const items = await getItems();
-  const item: ItemType = items.find((item) => item.id === itemId)!;
-
+  const item: ItemType = items.find((item) => item.id === id)!;
   return <ItemUI {...item} />;
 }

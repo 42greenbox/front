@@ -3,8 +3,8 @@ export type ItemDto = {
   item_id: string;
   title: string;
   img: string;
-  createdAt: string;
-  expiredAt: string;
+  createdAt: number;
+  expiredAt: number;
   location: string;
   share: boolean;
   rental: boolean;

@@ -10,26 +10,26 @@ import { http } from "../lib/HttpClient";
 
 export default class ItemRepository implements IItemRepository {
   public getItems = async () => {
-    return await http
-      .get<ItemDto[]>("/storage")
-      .then((res) => {
-        const items = res.data.map((dto) => {
-          return {
-            id: dto.item_id,
-            img: dto.img,
-            owner: dto.user_id,
-            title: dto.title,
-            expiredAt: dto.expiredAt,
-            location: dto.location,
-            share: dto.share,
-            rental: dto.rental,
-          };
-        });
-        return items;
-      })
-      .catch((err) => {
-        return err;
-      });
+    const res = await fetch("https://server.42greenbox.com/storage");
+    const rawItems: ItemDto[] = await res.json();
+    const items: ItemType[] = rawItems.map((dto) => {
+      return {
+        id: dto.item_id,
+        img: dto.img,
+        owner: dto.user_id,
+        title: dto.title,
+        expiredAt: dto.expiredAt,
+        location: dto.location,
+        share: dto.share,
+        rental: dto.rental,
+      };
+    });
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return items;
   };
 
   public getItem = async (item: ItemType) => {
