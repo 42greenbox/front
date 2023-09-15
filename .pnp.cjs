@@ -42,6 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss", "npm:8.4.29"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:18.2.0"],\
+            ["return-fetch", "npm:0.4.5"],\
             ["tailwindcss", "npm:3.3.3"],\
             ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
             ["xstate", "npm:4.38.2"]\
@@ -5650,6 +5651,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss", "npm:8.4.29"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:18.2.0"],\
+            ["return-fetch", "npm:0.4.5"],\
             ["tailwindcss", "npm:3.3.3"],\
             ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
             ["xstate", "npm:4.38.2"]\
@@ -8080,6 +8082,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/retry-npm-0.12.0-72ac7fb4cc-623bd7d2e5.zip/node_modules/retry/",\
           "packageDependencies": [\
             ["retry", "npm:0.12.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["return-fetch", [\
+        ["npm:0.4.5", {\
+          "packageLocation": "./.yarn/unplugged/return-fetch-npm-0.4.5-8a87756498/node_modules/return-fetch/",\
+          "packageDependencies": [\
+            ["return-fetch", "npm:0.4.5"]\
           ],\
           "linkType": "HARD"\
         }]\

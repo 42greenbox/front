@@ -3,15 +3,6 @@ import Item from "@/ui/components/Item";
 import Link from "next/link";
 
 export default async function Home() {
-  //const { itemActor } = useContext(ActorContext);
-  //const [state, send] = useActor(itemActor);
-  //const { items } = state.context;
-  //const [itemState] = useAppMachine(itemsMachine, "showing");
-  //const service = itemState.children.itemsMachine;
-  //const [state, send] = useActor(
-  //  service as InterpreterFrom<typeof itemsMachine>
-  //);
-  //const items = state.context.items;
   const { getItems } = itemService();
   const items = await getItems();
   return (

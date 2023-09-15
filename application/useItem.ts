@@ -11,12 +11,8 @@ export const itemService = () => {
   };
 
   const getMyItems = async () => {
-    try {
-      const data = await itemRepository.getMyItems();
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
+    const data = await itemRepository.getMyItems();
+    return data;
   };
 
   const getItem = async (item: ItemType) => {
