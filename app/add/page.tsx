@@ -6,8 +6,10 @@ import { Spacing } from "@/ui/components/Spacing";
 import Link from "next/link";
 import React, { useState } from "react";
 import create from "../actions";
+import Scanner from "./@scan/page";
 
 export default function Add() {
+  const [isScanning, setIsScanning] = useState(false);
   const [selectedDay, setSelectedDay] = useState("1");
   const days = ["1", "2", "3"];
   const [selectedSector, setSelectedSector] = useState("R1");
@@ -29,10 +31,12 @@ export default function Add() {
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
     setTitle(e.target.value);
   };
 
   const handleSectorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    e.preventDefault();
     setSelectedSector(e.target.value);
   };
 
@@ -45,10 +49,20 @@ export default function Add() {
   };
 
   const handleDayChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    event.preventDefault();
     setSelectedDay(event.target.value);
   };
 
-  return (
+  const onClickScan = () => {
+    setIsScanning(true);
+  };
+
+  return isScanning ? (
+    <>
+      <Scanner />
+      <Button onClick={() => setIsScanning(false)}>close</Button>
+    </>
+  ) : (
     <form action={onCreate}>
       <Spacing size={71} css={{ gridRow: "1" }} />
       <div
@@ -74,8 +88,8 @@ export default function Add() {
           accept="image/*"
           css={{ display: "none" }}
         />
-        <Link href="/scan">
-          <Button>scan</Button>
+        <Link href={"/add/scan"}>
+          <Button onClick={onClickScan}>scan</Button>
         </Link>
       </label>
       <div
