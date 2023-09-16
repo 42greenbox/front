@@ -1,13 +1,11 @@
 import { itemService } from "@/application/useItem";
+import Button from "@/ui/components/Button";
 import Item from "@/ui/components/Item";
-import { cookies } from "next/headers";
 import Link from "next/link";
 
 export default async function Home() {
   const { getItems } = itemService();
   const items = await getItems();
-  const cookieStore = cookies();
-  const token = cookieStore.get("token");
 
   return (
     <>
@@ -18,6 +16,9 @@ export default async function Home() {
             <Item img={img} title={title} share={share} expiredAt={expiredAt} />
           </Link>
         ))}
+        <Link href={"/add"}>
+          <Button>add</Button>
+        </Link>
       </>
     </>
   );

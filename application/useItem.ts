@@ -25,19 +25,11 @@ export const itemService = () => {
   };
 
   const takeoutItem = async (item: ItemType, status: string) => {
-    try {
-      itemRepository.putItem(item, status);
-    } catch (error) {
-      console.log(error);
-    }
+    itemRepository.putItem(item, status);
   };
 
-  const addItem = (user: UserType, item: ItemSendType) => {
-    try {
-      itemRepository.postItem(user, item);
-    } catch (error) {
-      console.error(error);
-    }
+  const addItem = async (user: UserType, item: ItemSendType) => {
+    itemRepository.postItem(user, item);
   };
   return { getItems, addItem, takeoutItem, getMyItems, getItem };
 };
