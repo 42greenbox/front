@@ -1,10 +1,14 @@
 import { itemService } from "@/application/useItem";
 import Item from "@/ui/components/Item";
+import { cookies } from "next/headers";
 import Link from "next/link";
 
 export default async function Home() {
   const { getItems } = itemService();
   const items = await getItems();
+  const cookieStore = cookies();
+  const token = cookieStore.get("token");
+
   return (
     <>
       <h1>home</h1>

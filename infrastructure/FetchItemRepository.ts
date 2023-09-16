@@ -5,7 +5,8 @@ import fetchInstance from "@/lib/FetchInstance";
 
 export default class FetchItemRepository implements IItemRepository {
   public getItems = async () => {
-    const res = await fetchInstance("https://server.42greenbox.com/storage");
+    const res = await fetchInstance("/storage");
+    console.log("line9");
     const rawItems: ItemDto[] = await res.json();
     const items: ItemType[] = rawItems.map((dto) => {
       return {
@@ -27,7 +28,7 @@ export default class FetchItemRepository implements IItemRepository {
     return items;
   };
   public getMyItems = async () => {
-    const res = await fetchInstance("https://server.42greenbox.com/storage/me");
+    const res = await fetchInstance("/storage/me");
     const rawItems: ItemDto[] = await res.json();
     const items: ItemType[] = rawItems.map((dto) => {
       return {
