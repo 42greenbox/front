@@ -6,7 +6,6 @@ import fetchInstance from "@/lib/FetchInstance";
 export default class FetchItemRepository implements IItemRepository {
   public getItems = async () => {
     const res = await fetchInstance("/storage");
-    console.log("line9");
     const rawItems: ItemDto[] = await res.json();
     const items: ItemType[] = rawItems.map((dto) => {
       return {
