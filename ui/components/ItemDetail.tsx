@@ -1,5 +1,8 @@
 import { ItemType } from "@/domain/Item";
+import { dayLeft } from "@/lib/datetime";
+import { CSSInterpolation } from "@emotion/serialize";
 import Image from "next/image";
+import { Spacing } from "./Spacing";
 
 export default function ItemDetail({
   id,
@@ -15,7 +18,7 @@ export default function ItemDetail({
   const text = days < 0 ? "처분가능" : `${days}일 남음`;
   return (
     <div>
-      <Image alt="" src={img} />
+      <Image css={{ width: "90vw" }} alt="" src={img} width={90} height={90} />
       <Spacing size={20} />
       <div css={flexCSS}>
         <div css={{ fontWeight: "bold" }}>{title}</div>
@@ -29,3 +32,16 @@ export default function ItemDetail({
     </div>
   );
 }
+
+const locationCSS: CSSInterpolation = {
+  textAlign: "left",
+};
+const imageCSS: CSSInterpolation = {
+  width: "90px",
+  objectFit: "contain",
+};
+
+const flexCSS: CSSInterpolation = {
+  display: "flex",
+  justifyContent: "space-between",
+};
