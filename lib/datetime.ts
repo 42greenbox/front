@@ -8,6 +8,6 @@ export const dayLeft = (epochExpiredAt: number) => {
   const now = new Date();
   const expiredAt = new Date(epochExpiredAt);
   return Math.floor(
-    (now.getTime() - expiredAt.getTime()) / (1000 * 60 * 60 * 24)
+    (now.getTime() - expiredAt.getTime()) / (1000 * 60 * 60 * 24),
   );
 };

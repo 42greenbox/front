@@ -16,6 +16,7 @@ module.exports = {
         "Test",
         "Rename",
         "Remove",
+        "Build",
       ],
     ],
     "type-empty": [2, "never"],

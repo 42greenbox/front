@@ -36,7 +36,7 @@ export const handlers = [
           share: true,
           rental: false,
         },
-      ])
+      ]),
     );
   }),
   rest.get("https://server.42greenbox.com/storage/me", (req, res, ctx) => {
@@ -74,7 +74,7 @@ export const handlers = [
           share: true,
           rental: false,
         },
-      ])
+      ]),
     );
   }),
   rest.get("https://server.42greenbox.com/user/me", (req, res, ctx) => {
@@ -85,7 +85,7 @@ export const handlers = [
         id: "sohan",
         point: 10000,
         createdAt: 1693271727,
-      })
+      }),
     );
   }),
 ];

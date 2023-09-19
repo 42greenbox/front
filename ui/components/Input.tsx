@@ -67,7 +67,7 @@ interface TextFieldProps
 Input.TextField = forwardRef(
   (
     { error, ...props }: TextFieldProps,
-    ref: ForwardedRef<HTMLInputElement>
+    ref: ForwardedRef<HTMLInputElement>,
   ) => {
     return (
       <input
@@ -95,7 +95,7 @@ Input.TextField = forwardRef(
         {...props}
       />
     );
-  }
+  },
 );
 Input.TextField.displayName = "input";
 

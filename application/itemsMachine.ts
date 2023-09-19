@@ -102,5 +102,5 @@ export const itemsMachine = createMachine(
         console.log("error occured", event.data.message);
       },
     },
-  }
+  },
 );

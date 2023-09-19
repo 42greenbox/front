@@ -56,7 +56,7 @@ export default class FetchItemRepository implements IItemRepository {
 
   public getItem = async (item: ItemType) => {
     const res = await fetchInstance(
-      `/storage?user_id=${item.owner}&item_id=${item.id}`
+      `/storage?user_id=${item.owner}&item_id=${item.id}`,
     );
     const rawItem: ItemDto = await res.json();
     const itemm: ItemType = {
