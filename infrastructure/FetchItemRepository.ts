@@ -12,7 +12,7 @@ export default class FetchItemRepository implements IItemRepository {
   public getItems = async () => {
     const res = await fetchInstance("/storage");
     const rawItems: ItemDto[] = await res.json();
-    const items: ItemType[] = rawItems.map((dto) => {
+    const items: ItemType[] = rawItems.map(dto => {
       return {
         id: dto.item_id,
         img: dto.img,
@@ -34,7 +34,7 @@ export default class FetchItemRepository implements IItemRepository {
   public getMyItems = async () => {
     const res = await fetchInstance("/storage/me");
     const rawItems: ItemDto[] = await res.json();
-    const items: ItemType[] = rawItems.map((dto) => {
+    const items: ItemType[] = rawItems.map(dto => {
       return {
         id: dto.item_id,
         img: dto.img,
@@ -109,6 +109,6 @@ export default class FetchItemRepository implements IItemRepository {
 }
 
 const base64ToBlob = async (base64: string) => {
-  const blob = await fetch(base64).then((res) => res.blob());
+  const blob = await fetch(base64).then(res => res.blob());
   return blob;
 };

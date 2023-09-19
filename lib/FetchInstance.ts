@@ -25,7 +25,7 @@ const fetchInstance = returnFetch({
   baseUrl: "https://server.42greenbox.com",
   headers: headers,
   interceptors: {
-    request: async (args) => {
+    request: async args => {
       const newHeaders: HeadersInit = injectToken(args);
       const newArgs = [
         args[0],

@@ -64,12 +64,10 @@ class HttpClient {
       headers,
     });
 
-    http.interceptors.request.use(injectToken, (error) =>
-      Promise.reject(error)
-    );
+    http.interceptors.request.use(injectToken, error => Promise.reject(error));
 
     http.interceptors.response.use(
-      (response) => {
+      response => {
         if (response.data.error) {
           this.handleError(response.data.error.statusCode);
           const errorInstance = new Error(
@@ -79,7 +77,7 @@ class HttpClient {
         }
         return response;
       },
-      (error) => {
+      error => {
         const { response } = error;
         return this.handleError(response);
       }

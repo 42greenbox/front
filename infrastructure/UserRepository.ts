@@ -3,13 +3,13 @@ import { UserType } from "../domain/User";
 import { http } from "../lib/HttpClient";
 
 export default class UserRepository implements IUserRepository {
-  public getUserMe = async () => {
+  public getMe = async () => {
     return await http
       .get<UserType>("/user/me")
-      .then((res) => {
+      .then(res => {
         return res.data;
       })
-      .catch((err) => {
+      .catch(err => {
         return err;
       });
   };

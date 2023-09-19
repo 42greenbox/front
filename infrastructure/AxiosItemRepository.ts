@@ -12,8 +12,8 @@ export default class ItemRepository implements IItemRepository {
   public getItems = async () => {
     return await http
       .get<ItemDto[]>("/storage")
-      .then((res) => {
-        const items = res.data.map((dto) => {
+      .then(res => {
+        const items = res.data.map(dto => {
           return {
             id: dto.item_id,
             img: dto.img,
@@ -27,7 +27,7 @@ export default class ItemRepository implements IItemRepository {
         });
         return items;
       })
-      .catch((err) => {
+      .catch(err => {
         return err;
       });
   };
@@ -35,7 +35,7 @@ export default class ItemRepository implements IItemRepository {
   public getItem = async (item: ItemType) => {
     return await http
       .get<ItemDto>(`/storage?user_id=${item.owner}&item_id=${item.id}`)
-      .then((res) => {
+      .then(res => {
         return {
           id: res.data.item_id,
           img: res.data.img,
@@ -47,7 +47,7 @@ export default class ItemRepository implements IItemRepository {
           rental: res.data.rental,
         };
       })
-      .catch((err) => {
+      .catch(err => {
         return err;
       });
   };
@@ -55,8 +55,8 @@ export default class ItemRepository implements IItemRepository {
   public getMyItems = async () => {
     return await http
       .get<ItemDto[]>("/storage/me")
-      .then((res) => {
-        const items = res.data.map((dto) => {
+      .then(res => {
+        const items = res.data.map(dto => {
           return {
             id: dto.item_id,
             img: dto.img,
@@ -70,14 +70,14 @@ export default class ItemRepository implements IItemRepository {
         });
         return items;
       })
-      .catch((err) => {
+      .catch(err => {
         return err;
       });
   };
 
   public putItem = async (item: ItemType, status: string) => {
     const newItem = { ...item, item_id: item.id, user_id: item.owner, status };
-    await http.put("/storage", newItem).catch((err) => console.log(err));
+    await http.put("/storage", newItem).catch(err => console.log(err));
   };
 
   public postItem = async (user: UserType, item: ItemSendType) => {
@@ -97,12 +97,12 @@ export default class ItemRepository implements IItemRepository {
         .post("/storage", formData, {
           headers: { "Content-Type": "multipart/form-data;" },
         })
-        .catch((err) => console.log(err));
+        .catch(err => console.log(err));
     }
   };
 }
 
 const base64ToBlob = async (base64: string) => {
-  const blob = await fetch(base64).then((res) => res.blob());
+  const blob = await fetch(base64).then(res => res.blob());
   return blob;
 };
