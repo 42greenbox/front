@@ -23,7 +23,7 @@ const headers: Readonly<Record<string, string | boolean>> = {
 // We can use the following function to inject the JWT token through an interceptor
 // We get the `accessToken` from the localStorage that we set when we authenticate
 const injectToken = (
-  config: InternalAxiosRequestConfig<any>,
+  config: InternalAxiosRequestConfig<any>
 ):
   | InternalAxiosRequestConfig<any>
   | Promise<InternalAxiosRequestConfig<any>> => {
@@ -64,25 +64,23 @@ class HttpClient {
       headers,
     });
 
-    http.interceptors.request.use(injectToken, (error) =>
-      Promise.reject(error),
-    );
+    http.interceptors.request.use(injectToken, error => Promise.reject(error));
 
     http.interceptors.response.use(
-      (response) => {
+      response => {
         if (response.data.error) {
           this.handleError(response.data.error.statusCode);
           const errorInstance = new Error(
-            response.data.error.statusCode + response.data.error.code,
+            response.data.error.statusCode + response.data.error.code
           );
           return Promise.reject(errorInstance);
         }
         return response;
       },
-      (error) => {
+      error => {
         const { response } = error;
         return this.handleError(response);
-      },
+      }
     );
 
     this.instance = http;
@@ -90,14 +88,14 @@ class HttpClient {
   }
 
   request<T = any, R = AxiosResponse<T>>(
-    config: AxiosRequestConfig,
+    config: AxiosRequestConfig
   ): Promise<R> {
     return this.http.request(config);
   }
 
   get<T = any, R = AxiosResponse<T>>(
     url: string,
-    config?: AxiosRequestConfig,
+    config?: AxiosRequestConfig
   ): Promise<R> {
     return this.http.get<T, R>(url, config);
   }
@@ -105,7 +103,7 @@ class HttpClient {
   post<T = any, R = AxiosResponse<T>>(
     url: string,
     data?: T,
-    config?: AxiosRequestConfig,
+    config?: AxiosRequestConfig
   ): Promise<R> {
     return this.http.post<T, R>(url, data, config);
   }
@@ -113,14 +111,14 @@ class HttpClient {
   put<T = any, R = AxiosResponse<T>>(
     url: string,
     data?: T,
-    config?: AxiosRequestConfig,
+    config?: AxiosRequestConfig
   ): Promise<R> {
     return this.http.put<T, R>(url, data, config);
   }
 
   delete<T = any, R = AxiosResponse<T>>(
     url: string,
-    config?: AxiosRequestConfig,
+    config?: AxiosRequestConfig
   ): Promise<R> {
     return this.http.delete<T, R>(url, config);
   }

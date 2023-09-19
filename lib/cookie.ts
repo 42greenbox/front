@@ -3,8 +3,8 @@ export function getCookie(name: string): string | undefined {
     new RegExp(
       "(?:^|; )" +
         name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
-        "=([^;]*)",
-    ),
+        "=([^;]*)"
+    )
   );
   return matches ? decodeURIComponent(matches[1]) : undefined;
 }
@@ -12,7 +12,7 @@ export function getCookie(name: string): string | undefined {
 export function setCookie(
   name: string,
   value: string,
-  options: { [key: string]: any } = {},
+  options: { [key: string]: any } = {}
 ): void {
   options = {
     path: "/",

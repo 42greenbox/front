@@ -115,7 +115,7 @@ export default function Add() {
               height: "4vh",
             }}
           >
-            {days.map((day) => (
+            {days.map(day => (
               <option key={day} value={day}>
                 {day}일
               </option>

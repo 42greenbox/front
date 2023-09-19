@@ -6,10 +6,10 @@ export default class UserRepository implements IUserRepository {
   public getMe = async () => {
     return await http
       .get<UserType>("/user/me")
-      .then((res) => {
+      .then(res => {
         return res.data;
       })
-      .catch((err) => {
+      .catch(err => {
         return err;
       });
   };

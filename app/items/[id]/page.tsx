@@ -9,6 +9,6 @@ export default async function ItemModal({
 }) {
   const { getItems } = itemService();
   const items = await getItems();
-  const item: ItemType = items.find((item) => item.id === id)!;
+  const item: ItemType = items.find(item => item.id === id)!;
   return <ItemUI {...item} />;
 }
