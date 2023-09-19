@@ -39,6 +39,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["axios", "npm:1.5.0"],\
             ["eslint", "npm:8.49.0"],\
             ["eslint-config-next", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:13.4.19"],\
+            ["husky", "npm:8.0.3"],\
             ["msw", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:1.3.1"],\
             ["next", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:13.4.19"],\
             ["next-pwa", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:5.6.0"],\
@@ -5902,6 +5903,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["axios", "npm:1.5.0"],\
             ["eslint", "npm:8.49.0"],\
             ["eslint-config-next", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:13.4.19"],\
+            ["husky", "npm:8.0.3"],\
             ["msw", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:1.3.1"],\
             ["next", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:13.4.19"],\
             ["next-pwa", "virtual:5fcf3a5bb6ab22f05d323901a06d318f3464df3c98e35af1fe203fd09fd1f75de0156b9064a2df8436eebd9bea11af0daa321904cd3f11aad8b0d1f4f6bcf003#npm:5.6.0"],\
@@ -6056,6 +6058,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["humanize-ms", "npm:1.2.1"],\
             ["ms", "npm:2.1.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["husky", [\
+        ["npm:8.0.3", {\
+          "packageLocation": "./.yarn/cache/husky-npm-8.0.3-b0b59c5127-837bc7e441.zip/node_modules/husky/",\
+          "packageDependencies": [\
+            ["husky", "npm:8.0.3"]\
           ],\
           "linkType": "HARD"\
         }]\
