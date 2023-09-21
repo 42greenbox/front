@@ -6,7 +6,7 @@ import { Spacing } from "@/ui/components/Spacing";
 import Link from "next/link";
 import React, { useState } from "react";
 import create from "../actions";
-import Scanner from "./@scan/page";
+import Scanner from "./scan/page";
 
 export default function Add() {
   const [isScanning, setIsScanning] = useState(false);
