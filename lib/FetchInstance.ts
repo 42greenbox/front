@@ -33,12 +33,17 @@ const fetchInstance = returnFetch({
           headers: newHeaders,
         },
       ];
+      console.log("********* before sending request *********");
+      console.log("Args:", newArgs);
+      console.log("url:", newArgs[0].toString());
+      console.log("requestInit:", newArgs[1], "\n\n");
       return newArgs;
     },
     response: async (response, requestArgs) => {
-      //console.log("********after receiving response*********");
-      //console.log("url:", requestArgs[0].toString());
-      //console.log("requestInit:", requestArgs[1], "\n\n");
+      console.log("********after receiving response*********");
+      console.log("response:", response);
+      console.log("url:", requestArgs[0].toString());
+      console.log("requestInit:", requestArgs[1], "\n\n");
       return response;
     },
   },
