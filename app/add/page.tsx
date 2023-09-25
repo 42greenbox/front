@@ -11,20 +11,43 @@ export default function Page() {
   const [selectedSector, setSelectedSector] = useState("R1");
 
   const [msg, setMsg] = useState("");
+  const [imageFile, setImageFile] = useState<File>();
 
   async function onCreate(formData: FormData) {
-    formData.append("itemId", "test");
-    formData.append("img", "https://picsum.photos/100");
+    formData.append("user_id", "sohan");
+    formData.append("item_id", "test");
+    formData.append("img", imageFile!);
     formData.append("expiryDate", selectedDay);
     formData.append("share", isShare ? "true" : "false");
     formData.append("rental", isRental ? "true" : "false");
     formData.append("location", selectedSector);
+
     const res = await create(formData);
     setMsg(res.message);
   }
 
+  const handleOnImageFileChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const file = event.target.files![0];
+    console.log("************raw file*********", file);
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      setImageFile(file);
+    };
+  };
+
   return (
     <form action={onCreate}>
+      <label htmlFor="file">
+        <input
+          type="file"
+          id="file"
+          accept="image/*"
+          onChange={handleOnImageFileChange}
+        />
+      </label>
       <input type="text" name="title" />
       <Toggle
         selected={isRental}

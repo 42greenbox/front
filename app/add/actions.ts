@@ -1,33 +1,40 @@
 "use server";
 import { itemService } from "@/application/useItem";
 import { userService } from "@/application/userService";
-import { ItemSendType } from "@/domain/Item";
+import fetchInstance from "@/lib/FetchInstance";
 import { revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 
 export default async function create(formData: FormData) {
   const { addItem } = itemService();
   const { getMe } = userService();
-  try 
-  {
-    const user = await getMe();
-    const item: ItemSendType = {
-    itemId: formData.get("itemId") as string,
-    owner: user.id,
-    title: formData.get("title") as string,
-    img: formData.get("img") as string,
-    expiryDate: formData.get("expiaryDate") as string,
-    share: formData.get("share") as string,
-    rental: formData.get("rental") as string,
-    location: formData.get("location") as string,
-  };
-  await addItem(user, item);
-  revalidateTag("items");
-  redirect(`/items/${item.itemId}`);
-  return {message: "success"};
-  }
-  catch (error) {
+  const itemId = formData.get("item_id") as string;
+  try {
+    console.log("***************line14**************");
+    console.log("*********before go to function********", formData.get("img"));
+    //const blob = await base64ToBlob(formData.get("img") as string);
+    console.log("***************line16**************");
+    //await addItem(user, item);
+    //formData.append("img", blob);
+    await fetchInstance("/storage", {
+      method: "POST",
+      headers: {
+        "Content-Type": "multipart/form-data;",
+      },
+      body: formData,
+    });
+    revalidateTag("items");
+    redirect(`/items/${itemId}`);
+    //return {message: "success"};
+  } catch (error) {
     console.log("***************error**********", error);
-    return {message: "there was an error"};
+    return { message: "there was an error" };
   }
 }
+
+const base64ToBlob = async (base64: string) => {
+  console.log("********insideof function*********", base64);
+  const blob = await fetch(base64).then(res => res.blob());
+  console.log("*********after fetch file*********", blob);
+  return blob;
+};

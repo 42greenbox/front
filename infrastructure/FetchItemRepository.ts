@@ -87,6 +87,7 @@ export default class FetchItemRepository implements IItemRepository {
   public postItem = async (user: UserType, item: ItemSendType) => {
     if (hasEnoughPoint(user, totalPointToUse(item))) {
       const blob = await base64ToBlob(item.img);
+      console.log(item.img);
       const formData = new FormData();
       formData.append("user_id", item.owner);
       formData.append("item_id", item.itemId!);
