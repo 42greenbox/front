@@ -24,12 +24,12 @@ export default async function create(formData: FormData) {
       body: formData,
     });
     revalidateTag("items");
-    redirect(`/items/${itemId}`);
     //return {message: "success"};
   } catch (error) {
     console.log("***************error**********", error);
     return { message: "there was an error" };
   }
+  redirect(`/items/${itemId}`);
 }
 
 const base64ToBlob = async (base64: string) => {
