@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-lime--light--lime-10: 0 58 4;
+    --primary-lime--light--lime-9: 63 102 0;
+    --primary-lime--light--lime-8: 91 140 0;
+    --primary-lime--light--lime-7: 124 179 5;
+    --primary-lime--light--lime-6: 160 217 17;
+    --primary-lime--light--lime-5_main: 191 238 92;
+    --primary-lime--light--lime-4: 213 255 124;
+    --primary-lime--light--lime-3: 234 255 143;
+    --primary-lime--light--lime-2: 240 252 215;
+    --primary-lime--light--lime-1: 250 255 240;
+  }
+}

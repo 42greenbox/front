@@ -7,6 +7,12 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: {
+      primary: {
+        main: "rgb(var(--primary-lime--light--lime-5_main) / <alpha-value>)",
+        hover: "rgb(var(--primary-lime--light--lime-10) / <alpha-value>)",
+      },
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

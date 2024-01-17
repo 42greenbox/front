@@ -14,6 +14,9 @@ export default function Home() {
       <Link href="/mypage">
         <Button>go to mypage</Button>
       </Link>
+      <Link href="/css-test">
+        <Button>go to css-test</Button>
+      </Link>
     </div>
   );
 }
